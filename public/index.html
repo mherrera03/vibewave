@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VibeWave | Your music, your vibe</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="logo">♫ <span>VibeWave</span></div>
+      <p class="sidebar-label">TU ESPACIO</p>
+      <nav>
+        <a href="#inicio" class="nav-link active">⌂ &nbsp; Inicio</a>
+        <a href="#biblioteca" class="nav-link">♫ &nbsp; Biblioteca</a>
+        <a href="#formulario" class="nav-link">＋ &nbsp; Nueva canción</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="mini-glow">✦</div>
+        <p>Good music.<br>Good vibes.</p>
+      </div>
+    </aside>
+
+    <main>
+      <header class="topbar">
+        <div class="topbar-text">YOUR MUSIC UNIVERSE ✦</div>
+        <div class="avatar">VW</div>
+      </header>
+
+      <section class="hero" id="inicio">
+        <div class="hero-content">
+          <span class="eyebrow">✦ WELCOME TO YOUR SOUND</span>
+          <h1>Feel every<br><em>beat.</em></h1>
+          <p>Tu música, tus momentos, tu universo.</p>
+          <a href="#formulario" class="btn btn-light">＋ Agregar canción</a>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orb orb-one"></div>
+          <div class="orb orb-two"></div>
+          <span class="hero-note">♫</span>
+        </div>
+      </section>
+
+      <section class="stats">
+        <div class="stat">
+          <span class="stat-icon">♫</span>
+          <div><strong id="totalCanciones">0</strong><small>Canciones</small></div>
+        </div>
+        <div class="stat">
+          <span class="stat-icon">✦</span>
+          <div><strong id="totalArtistas">0</strong><small>Artistas</small></div>
+        </div>
+        <div class="stat">
+          <span class="stat-icon">◈</span>
+          <div><strong id="totalGeneros">0</strong><small>Géneros</small></div>
+        </div>
+      </section>
+
+      <section id="biblioteca" class="section">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow pink">YOUR COLLECTION</span>
+            <h2>Tu biblioteca <span>musical</span></h2>
+          </div>
+          <input id="buscar" type="search"
+            placeholder="⌕ Buscar canción o artista..."
+            aria-label="Buscar canciones">
+        </div>
+        <div id="mensajeBiblioteca" class="notice" role="status"></div>
+        <div id="canciones" class="song-grid"></div>
+      </section>
+
+      <section id="formulario" class="section">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow pink">MANAGE YOUR VIBES</span>
+            <h2 id="tituloFormulario">Agregar <span>canción</span></h2>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <form id="formCancion">
+            <input type="hidden" id="cancionId">
+            <div class="form-grid">
+              <label>Título de la canción *
+                <input id="titulo" maxlength="150" required
+                  placeholder="Ej. Midnight Dreams">
+              </label>
+              <label>Artista *
+                <input id="artista" maxlength="150" required
+                  placeholder="Ej. Luna Waves">
+              </label>
+              <label>Álbum
+                <input id="album" maxlength="150"
+                  placeholder="Ej. After Hours">
+              </label>
+              <label>Género
+                <input id="genero" maxlength="80"
+                  placeholder="Ej. Dream pop">
+              </label>
+              <label>Duración (mm:ss) *
+                <input id="duracion" required
+                  pattern="[0-9]{1,3}:[0-5][0-9]"
+                  placeholder="03:45" title="Formato mm:ss">
+              </label>
+              <label>URL de portada
+                <input id="portada" type="url"
+                  placeholder="https://ejemplo.com/imagen.jpg">
+              </label>
+            </div>
+            <div class="form-actions">
+              <button type="submit" id="guardar" class="btn btn-primary">
+                ✦ Guardar canción
+              </button>
+              <button type="button" id="cancelar" class="btn btn-ghost"
+                hidden>Cancelar edición</button>
+            </div>
+            <p id="mensajeFormulario" role="status"></p>
+          </form>
+        </div>
+      </section>
+
+      <footer>VibeWave ✦ Your music, your vibe · CRUD musical</footer>
+    </main>
+  </div>
+</body>
+</html>
